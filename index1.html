@@ -4,53 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Button Toggle Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
 
-    <style>
-        .red-button {
-            background-color: red;
-            color: white;
-        }
-    </style>
-    <style>
-        .green-button {
-            background-color: green;
-            color: white;
-        }
-    </style>
 
-    <script>
-        function showSingleButton() {
-            document.getElementById('buttonContainer').innerHTML = `
-                <button onclick="makeRed(this)">Choose botton 1</button>
-                <button onclick="makeGreen(this)">Choose button 2</button>
-                <button onclick="makeRed(this)">Choose button 3</button>
-                <button onclick="showMultipleButtons()">Go menu</button>
-            `;
-        }
-
-        function showMultipleButtons() {
-            document.getElementById('buttonContainer').innerHTML = `
-                <button onclick="showSingleButton()">Start button 1</button>
-                <button onclick="showSingleButton()">Start button 2</button>
-                <button onclick="showSingleButton()">Start button 3</button>
-                <button onclick="showSingleButton()">Start button 4</button>
-                <button onclick="showSingleButton()">Start button 5</button>
-            `;
-        }
-
-        function makeRed(button) {
-            button.classList.add('red-button');
-        }
-
-        function makeGreen(button) {
-            button.classList.add('green-button');
-        }
-
-        window.onload = showMultipleButtons;
-    </script>
 </head>
 <body>
     <h1>TEST</h1>
+    <audio id="audioPlayer"></audio>
     <div id="buttonContainer"></div>
 </body>
 </html>
