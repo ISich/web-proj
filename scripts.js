@@ -19,9 +19,30 @@ function toggleMusic(track) {
     }
 }
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function getElements(point, count){
+    var res = [];
+    while (res.length != point){
+        var val = (getRandomInt(count) + 1).toString();
+        if (!(res.includes(val))){
+            res.push(val);
+        }
+    }
+    return res
+}
+
 function showSingleButton() {
+    const tracks = getElements(4, 5);
+    for(const r of tracks) {
+        console.log(r);
+    }
+    const track1 = tracks[0];
+    //const track1 = (getRandomInt(4) + 1).toString();
     document.getElementById('buttonContainer').innerHTML = `
-        <button onclick="toggleMusic('music/4.mp3')">Play/Pause Track 1</button>
+        <button onclick="toggleMusic('music/${track1}.mp3')">Play/Pause Track 1</button>
         <button onclick="makeRed(this)">Choose botton 1</button>
         <button onclick="makeGreen(this)">Choose button 2</button>
         <button onclick="makeRed(this)">Choose button 3</button>
@@ -47,6 +68,5 @@ function makeRed(button) {
 function makeGreen(button) {
     button.classList.add('green-button');
 }
-
 
 window.onload = showMultipleButtons;
