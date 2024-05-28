@@ -7,3 +7,25 @@
     background-color: green;
     color: white;
 }
+
+.image-button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    padding: 10px; /* Добавляем паддинг вокруг изображения */
+    border-radius: 5px; /* Скругляем углы для красоты */
+    transition: background-color 0.3s; /* Плавный переход фона */
+}
+
+.red-background {
+    background-color: red;
+}
+
+.green-background {
+    background-color: green;
+}
+
+.image-button:hover img {
+    opacity: 0.8; /* Слегка затемняем изображение при наведении */
+}
