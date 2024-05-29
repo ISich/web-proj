@@ -36,7 +36,7 @@ function getElements(point, count){
     return res
 }
 
-function showSingleButton() {
+function showGameButton() {
     //НАДО ПОМЕНЯТЬ 2 ЧИСЛО НА КОЛВО ПЕСЕН
     const tracks = getElements(4, 5);
     for(const r of tracks) {
@@ -77,26 +77,35 @@ function showSingleButton() {
     <img src="cover/${track4}.jpg" alt="Cover4" width="100px" height="100px">
     </button>
     
-    <button onclick="showMultipleButtons()">Go menu</button>
+    <button onclick="showMenuButtons()">Go menu</button>
     
-    <img src="cover/0.jpg" width="100" height="100" />
     `;
+
+    document.getElementById('textContainer').innerHTML = `
+    <p>info1</p>
+    <p>info2</p>
+    <p>info3</p>
+    <p>info4</p>
+    `;
+
+    
 }
 
-function showMultipleButtons() {
+function showMenuButtons() {
     stopMusic();
     document.getElementById('buttonContainer').innerHTML = `
-        <button onclick="showSingleButton()">Start button 1</button>
-        <button onclick="showSingleButton()">Start button 2</button>
-        <button onclick="showSingleButton()">Start button 3</button>
-        <button onclick="showSingleButton()">Start button 4</button>
-        <button onclick="showSingleButton()">Start button 5</button>
+        <button onclick="showGameButton()">Start button 1</button>
+        <button onclick="showGameButton()">Start button 2</button>
+        <button onclick="showGameButton()">Start button 3</button>
+        <button onclick="showGameButton()">Start button 4</button>
+        <button onclick="showGameButton()">Start button 5</button>
     `;
 }
 
 
 function toggleButtonBackground(button, colorClass) {
-    button.classList.toggle(colorClass);
+    //alert(colorClass);
+    button.classList.toggle(colorClass, true);
 }
 
-window.onload = showMultipleButtons;
+window.onload = showMenuButtons;
