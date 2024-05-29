@@ -1,3 +1,9 @@
+const fileContent = `1 ||| Lida ||| Ира
+2 ||| YUNGBLUD ||| Abyss
+3 ||| Toto ||| Africa
+4 ||| Kai Angel ||| SLAYERR
+5 ||| Слава КПСС ||| Остров`;
+
 function playMusic(track) {
     var audioPlayer = document.getElementById('audioPlayer');
     audioPlayer.src = track;
@@ -36,12 +42,22 @@ function getElements(point, count){
     return res
 }
 
+function getInfo(lineNumber) {
+    const lines = fileContent.split('\n');
+    if (lines.length < lineNumber)
+        return "Без названия - неизвестен";
+    for (const line0 of lines){
+        let line = line0.split('|||');
+        if (Number(line[0]) == lineNumber){
+            return `${line[1]} - ${line[2]}`
+        }
+    }
+    return "Без названия - неизвестен";
+}
+
 function showGameButton() {
     //НАДО ПОМЕНЯТЬ 2 ЧИСЛО НА КОЛВО ПЕСЕН
     const tracks = getElements(4, 5);
-    for(const r of tracks) {
-        console.log(r);
-    }
     const ans = getRandomInt(4);
 
     const track1 = tracks[0];
@@ -57,6 +73,10 @@ function showGameButton() {
     const color3 = colors[2];
     const color4 = colors[3];
     
+    const info1 = getInfo(Number(track1));
+    const info2 = getInfo(Number(track2));
+    const info3 = getInfo(Number(track3));
+    const info4 = getInfo(Number(track4));
     
     document.getElementById('buttonContainer').innerHTML = `
     <button onclick="toggleMusic('music/${track_ans}.mp3')">Play/Pause Track</button>
@@ -80,12 +100,11 @@ function showGameButton() {
     <button onclick="showMenuButtons()">Go menu</button>
     
     `;
-
     document.getElementById('textContainer').innerHTML = `
-    <p>info1</p>
-    <p>info2</p>
-    <p>info3</p>
-    <p>info4</p>
+    <p>${info1}</p>
+    <p>${info2}</p>
+    <p>${info3}</p>
+    <p>${info4}</p>
     `;
 
     
