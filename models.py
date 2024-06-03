@@ -11,6 +11,7 @@ class Tracks(Base):
 
     id: Mapped[int] = mapped_column(autoincrement=True, primary_key=True)
     name: Mapped[str]
+    type: Mapped[str]
 
 
 class Singers(Base):

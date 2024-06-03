@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Guessing Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/guess.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+        </header>
+        <main>
+            <p class="welcome-message">welcome to musicle, the music-guessing game. it comes in several flavors - choose yours!</p>
+            <div class="game-options">
+                <a href="#" class="game-option" style="background-image: url('{{ url_for('static', filename='images/pop.jpg') }}');">Поп музыка<br><span>Эти треки знает каждый</span></a>
+                <a href="#" class="game-option spec" style="background-image: url('{{ url_for('static', filename='images/rap.jpg') }}');">Русский рэп<br><span>Легендарные треки всеми любимого жанра</span></a>
+                <a href="#" class="game-option special-background" style="background-image: url('{{ url_for('static', filename='images/rock.jpg') }}');">Рок<br><span>То что передается поколениями</span></a>
+                <a href="#" class="game-option" style="background-image: url('{{ url_for('static', filename='images/electro.jpg') }}');">Электроника<br><span>От дабстэпа до драм эн бэйса</span></a>
+                <a href="#" class="game-option" style="background-image: url('{{ url_for('static', filename='images/internet.jpg') }}');">Интернет герои<br><span>Треки популярных блогеров/стримеров</span></a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
