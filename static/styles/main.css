@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0; /* Уменьшение отступа снизу у заголовка */
+    padding-bottom: 0; /* Удаление внутреннего отступа */
+}
+
+.logo {
+    width: 300px; /* Увеличьте ширину до 300 пикселей или более */
+    height: auto; /* Высота будет автоматически рассчитана пропорционально */
+    margin-bottom: 5px; /* Уменьшение отступа снизу у логотипа */
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-weight: 700;
+    padding-bottom: 0; /* Удаление внутреннего отступа */
+}
+
+.welcome-message {
+    font-size: 1.5em; /* Увеличьте размер шрифта до 1.5em или больше */
+    margin-top: 5px; /* Уменьшение отступа сверху */
+    margin-bottom: 20px; /* Дополнительное пространство снизу */
+}
+
+.game-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.game-option {
+    display: block;
+    position: relative;
+    padding: 20px;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    background-size: cover;
+    background-position: center center; /* Положение изображения по центру */
+    border-radius: 10px;
+    text-align: right; /* Выравнивание названия стиля правее */
+}
+
+.special-background {
+    background-position: center center; /* Положение изображения для конкретного элемента */
+}
+
+.game-option span {
+    display: block;
+    font-size: 0.8em;
+    margin-top: 5px;
+    font-weight: 700; /* Более жирный шрифт */
+    color: #ffffff; /* Белый цвет */
+}
+
+.game-option:hover {
+    opacity: 0.8;
+}
+
+.spec {
+    background-position: center 450px;
+}

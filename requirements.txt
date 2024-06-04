@@ -1,0 +1,9 @@
+Flask
+Flask-SQLAlchemy
+psycopg2-binary
+PyQt5
+PyQtWebEngine
+black
+SQLAlchemy
+psycopg-binary
+psycopg

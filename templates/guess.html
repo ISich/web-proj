@@ -3,25 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Guessing Game</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
+    <title>Musicle</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/guess.css') }}">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
-        </header>
-        <main>
-            <p class="welcome-message">Добро пожаловать в MelodyGuess! Выберите категорию треков, которые хотите отгадывать.</p>
-            <div class="game-options">
-                <a href="#" class="game-option" style="background-image: url('{{ url_for('static', filename='images/pop.jpg') }}');">Поп музыка<br><span>Эти треки знает каждый</span></a>
-                <a href="#" class="game-option spec" style="background-image: url('{{ url_for('static', filename='images/rap.jpg') }}');">Русский рэп<br><span>Легендарные треки всеми любимого жанра</span></a>
-                <a href="#" class="game-option special-background" style="background-image: url('{{ url_for('static', filename='images/rock.jpg') }}');">Рок<br><span>То что передается поколениями</span></a>
-                <a href="#" class="game-option" style="background-image: url('{{ url_for('static', filename='images/electro.jpg') }}');">Электроника<br><span>От дабстэпа до драм эн бэйса</span></a>
-                <a href="#" class="game-option" style="background-image: url('{{ url_for('static', filename='images/internet.jpg') }}');">Интернет герои<br><span>Треки популярных блогеров/стримеров</span></a>
+    <header>
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+    </header>
+    <main>
+        <div class="columns">
+            <div class="column light-green">
+                <div class="grid-item"><img src="{{ url_for('static', filename='cover/1.jpg') }}" alt="Album Cover 1"></div>
+                <div class="grid-item"><img src="{{ url_for('static', filename='cover/3.jpg') }}"></div>
+                <div class="grid-item"><img src="{{ url_for('static', filename='cover/5.jpg') }}"></div>
+                <div class="grid-item"><img src="{{ url_for('static', filename='cover/4.jpg') }}"></div>
             </div>
-        </main>
-    </div>
+            <div class="column light-beige">
+                <div class="grid-item"><img src="image5.jpg" alt="Album Cover 5"></div>
+                <div class="grid-item"><img src="image6.jpg" alt="Album Cover 6"></div>
+                <div class="grid-item"><img src="image7.jpg" alt="Album Cover 7"></div>
+                <div class="grid-item"><img src="image8.jpg" alt="Album Cover 8"></div>
+            </div>
+            <div class="column light-beige">
+                <div class="grid-item"><img src="image9.jpg" alt="Album Cover 9"></div>
+                <div class="grid-item"><img src="image10.jpg" alt="Album Cover 10"></div>
+                <div class="grid-item"><img src="image11.jpg" alt="Album Cover 11"></div>
+                <div class="grid-item"><img src="image12.jpg" alt="Album Cover 12"></div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

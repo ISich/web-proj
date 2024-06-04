@@ -1,82 +1,105 @@
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
 header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+header h1 span {
+    font-weight: normal;
+}
+
+header p {
+    font-size: 14px;
+    color: #666;
+}
+
+.ad-banner {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.ad-banner p {
+    margin: 0;
+    font-size: 14px;
+    color: #444;
+}
+
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
+}
+
+.columns {
+    display: flex;
+    gap: 10px; /* Reduced gap between columns */
+    width: 100%;
+    max-width: 1000px; /* Adjust the max-width as necessary */
     justify-content: center;
-    margin-bottom: 0; /* Уменьшение отступа снизу у заголовка */
-    padding-bottom: 0; /* Удаление внутреннего отступа */
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centering items in column */
+    gap: 20px; /* Vertical gap between items in each column */
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f8f8f8; /* Default background color */
+    flex: 1;
+    max-width: 200px; /* Ensure the columns are not too wide */
+}
+
+.column.light-green {
+    background-color: #c0d6b7;
+}
+
+.column.light-beige {
+    background-color: #f5f5dc;
+}
+
+.grid-item {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Ensures the images fit within the rounded corners */
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the images cover the grid item without distortion */
+}
+
+.footer {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-top: 20px;
 }
 
 .logo {
     width: 300px; /* Увеличьте ширину до 300 пикселей или более */
     height: auto; /* Высота будет автоматически рассчитана пропорционально */
     margin-bottom: 5px; /* Уменьшение отступа снизу у логотипа */
-}
-
-h1 {
-    font-size: 2.5em;
-    margin: 0;
-    font-weight: 700;
-    padding-bottom: 0; /* Удаление внутреннего отступа */
-}
-
-.welcome-message {
-    font-size: 1.5em; /* Увеличьте размер шрифта до 1.5em или больше */
-    margin-top: 5px; /* Уменьшение отступа сверху */
-    margin-bottom: 20px; /* Дополнительное пространство снизу */
-}
-
-.game-options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.game-option {
-    display: block;
-    position: relative;
-    padding: 20px;
-    font-size: 1.5em;
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-    background-size: cover;
-    background-position: center center; /* Положение изображения по центру */
-    border-radius: 10px;
-    text-align: right; /* Выравнивание названия стиля правее */
-}
-
-.special-background {
-    background-position: center center; /* Положение изображения для конкретного элемента */
-}
-
-.game-option span {
-    display: block;
-    font-size: 0.8em;
-    margin-top: 5px;
-    font-weight: 700; /* Более жирный шрифт */
-    color: #ffffff; /* Белый цвет */
-}
-
-.game-option:hover {
-    opacity: 0.8;
-}
-
-.spec {
-    background-position: center 450px;
 }
