@@ -9,6 +9,7 @@ let track2 = '1';
 let track3 = '1';
 let track4 = '1';
 let track_ans = '1';
+let cur = -1;
 
 
 function getRandomInt(max) {
@@ -89,18 +90,29 @@ function showGameButton() {
     
 }
 
-function showMenuButtons() {
-    stopMusic();
-    document.getElementById('buttonContainer').innerHTML = `
-        <button onclick="showGameButton()">Start button 1</button>
-        <button onclick="showGameButton()">Start button 2</button>
-        <button onclick="showGameButton()">Start button 3</button>
-        <button onclick="showGameButton()">Start button 4</button>
-        <button onclick="showGameButton()">Start button 5</button>
-    `;
+function updateCurrent(val){
+    if(val == 1){
+        cur = track1;
+        document.getElementById("cover_cur").src = `../static/cover/${track1}.jpg`;
+        document.getElementById('track_cur').textContent = getInfo(track1);
+    }
+    else if(val == 2){
+        cur = track2;
+        document.getElementById("cover_cur").src = `../static/cover/${track2}.jpg`;
+        document.getElementById('track_cur').textContent = getInfo(track2);
+    }
+    else if(val == 3){
+        cur = track3;
+        document.getElementById("cover_cur").src = `../static/cover/${track3}.jpg`;
+        document.getElementById('track_cur').textContent = getInfo(track3);
+    }
+    else if(val == 4){
+        cur = track4;
+        document.getElementById("cover_cur").src = `../static/cover/${track4}.jpg`;
+        document.getElementById('track_cur').textContent = getInfo(track4);
+    }
+
 }
-
-
 function toggleButtonBackground(button, colorClass) {
     //alert(colorClass);
     button.classList.toggle(colorClass, true);
@@ -116,6 +128,12 @@ document.addEventListener('DOMContentLoaded', function () {
     track_ans = tracks[ans];
 
     document.getElementById('track1').textContent = getInfo(track1);
+    document.getElementById('track2').textContent = getInfo(track2);
+    document.getElementById('track3').textContent = getInfo(track3);
+    document.getElementById('track4').textContent = getInfo(track4);
+    document.getElementById('track_ans').textContent = getInfo(track_ans);
+
+    document.getElementById('track_cur').textContent = "???";
 
  
     document.getElementById("cover1").src = `../static/cover/${track1}.jpg`;
@@ -124,8 +142,10 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("cover4").src = `../static/cover/${track4}.jpg`;
     document.getElementById("cover_ans").src = `../static/cover/${track_ans}.jpg`;
 
+    document.getElementById("cover_cur").src = `../static/cover/0.jpg`;
+
     const audioPlayer = document.getElementById('audioPlayer');
-    audioPlayer.src = `static/music/${track_ans}.mp3`;
+    audioPlayer.src = `../static/music/${track_ans}.mp3`;
 
     // Функции управления аудиоплеером
     function playMusic() {
@@ -136,8 +156,22 @@ document.addEventListener('DOMContentLoaded', function () {
             audioPlayer.play();
         }
     }
+    
+    function checkSolution(){
+        console.log(track_ans==cur);
+    }
 
     document.getElementById('playMusic').addEventListener('click', playMusic);
-});
+    document.getElementById('solution').addEventListener('click', checkSolution);
 
-window.onload = showMenuButtons;
+    const buttons = document.querySelectorAll('.img-button');
+
+    // Пройдемся по каждой кнопке и добавим обработчик событий
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Получаем значение data-index и выводим его в консоль
+            const index = button.getAttribute('data-index');
+            updateCurrent(index);
+        });
+    });
+});

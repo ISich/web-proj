@@ -91,6 +91,26 @@ main {
     object-fit: cover; /* Ensures the images cover the grid item without distortion */
 }
 
+.img-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the images cover the grid item without distortion */
+    object-position: center; /* Centers the image */
+    display: block;
+}
+
 .footer {
     text-align: center;
     font-size: 14px;
