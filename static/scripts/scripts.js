@@ -4,28 +4,12 @@ const fileContent = `1 ||| Lida ||| Ира
 4 ||| Kai Angel ||| SLAYERR
 5 ||| Слава КПСС ||| Остров`;
 
-function playMusic(track) {
-    var audioPlayer = document.getElementById('audioPlayer');
-    audioPlayer.src = track;
-    audioPlayer.play();
-}
+let track1 = '1';
+let track2 = '1';
+let track3 = '1';
+let track4 = '1';
+let track_ans = '1';
 
-function stopMusic() {
-    var audioPlayer = document.getElementById('audioPlayer');
-    audioPlayer.pause();
-    audioPlayer.currentTime = 0; // Сбросить время воспроизведения
-}
-
-function toggleMusic(track) {
-    var audioPlayer = document.getElementById('audioPlayer');
-    var currentTrack = audioPlayer.src.split('/').pop(); // Извлекаем только имя файла
-
-    if (!audioPlayer.paused && currentTrack === track.split('/').pop()) {
-        stopMusic();
-    } else {
-        playMusic(track);
-    }
-}
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -55,16 +39,11 @@ function getInfo(lineNumber) {
     return "Без названия - неизвестен";
 }
 
+
 function showGameButton() {
     //НАДО ПОМЕНЯТЬ 2 ЧИСЛО НА КОЛВО ПЕСЕН
     const tracks = getElements(4, 5);
     const ans = getRandomInt(4);
-
-    const track1 = tracks[0];
-    const track2 = tracks[1];
-    const track3 = tracks[2];
-    const track4 = tracks[3];
-    const track_ans = tracks[ans];
     
     let colors = ['red-background', 'red-background', 'red-background', 'red-background'];
     colors[ans] = "green-background";
@@ -126,5 +105,39 @@ function toggleButtonBackground(button, colorClass) {
     //alert(colorClass);
     button.classList.toggle(colorClass, true);
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const tracks = getElements(4, 5);
+    const ans = getRandomInt(4);
+    track1 = tracks[0];
+    track2 = tracks[1];
+    track3 = tracks[2];
+    track4 = tracks[3];
+    track_ans = tracks[ans];
+
+    document.getElementById('track1').textContent = getInfo(track1);
+
+ 
+    document.getElementById("cover1").src = `../static/cover/${track1}.jpg`;
+    document.getElementById("cover2").src = `../static/cover/${track2}.jpg`;
+    document.getElementById("cover3").src = `../static/cover/${track3}.jpg`;
+    document.getElementById("cover4").src = `../static/cover/${track4}.jpg`;
+    document.getElementById("cover_ans").src = `../static/cover/${track_ans}.jpg`;
+
+    const audioPlayer = document.getElementById('audioPlayer');
+    audioPlayer.src = `static/music/${track_ans}.mp3`;
+
+    // Функции управления аудиоплеером
+    function playMusic() {
+        if (!audioPlayer.paused) {
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+        } else {
+            audioPlayer.play();
+        }
+    }
+
+    document.getElementById('playMusic').addEventListener('click', playMusic);
+});
 
 window.onload = showMenuButtons;

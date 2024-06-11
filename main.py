@@ -40,7 +40,7 @@ class TrackBySinger(db.Model):
 
 @app.route('/')
 def main():
-    return render_template('main_page.html')
+    return render_template('guess.html')
 
 
 @app.route('/<style>')
@@ -122,6 +122,6 @@ if __name__ == '__main__':
     with app.app_context():
         filename = 'tracks.txt'
         tracks = parse_tracks(filename)
-        add_tracks_to_db(tracks)
+        #add_tracks_to_db(tracks)
         print("Данные успешно добавлены в базу данных.")
     app.run(debug=True)

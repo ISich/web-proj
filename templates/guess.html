@@ -5,30 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Musicle</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/guess.css') }}">
+    <script src="static/scripts/scripts.js"></script>
+    <audio id="audioPlayer"></audio>
 </head>
 <body>
     <header>
         <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+        
     </header>
     <main>
+        <button id="playMusic">Воспроизвести/Остановить</button>
+        
+        <p>Первое случайное число: </p>
+
         <div class="columns">
             <div class="column light-green">
-                <div class="grid-item"><img src="{{ url_for('static', filename='cover/1.jpg') }}" alt="Album Cover 1"></div>
+                <div class="grid-item"><img src="{{ url_for('static', filename='cover/1.jpg') }}"></div>
                 <div class="grid-item"><img src="{{ url_for('static', filename='cover/3.jpg') }}"></div>
                 <div class="grid-item"><img src="{{ url_for('static', filename='cover/5.jpg') }}"></div>
                 <div class="grid-item"><img src="{{ url_for('static', filename='cover/4.jpg') }}"></div>
             </div>
             <div class="column light-beige">
-                <div class="grid-item"><img src="image5.jpg" alt="Album Cover 5"></div>
-                <div class="grid-item"><img src="image6.jpg" alt="Album Cover 6"></div>
-                <div class="grid-item"><img src="image7.jpg" alt="Album Cover 7"></div>
-                <div class="grid-item"><img src="image8.jpg" alt="Album Cover 8"></div>
+                <div class="grid-item"><img id="cover1" alt="Album Cover 5"></div>
+                <div class="grid-item"><img id="cover2" alt="Album Cover 6"></div>
+                <div class="grid-item"><img id="cover3" alt="Album Cover 7"></div>
+                <div class="grid-item"><img id="cover4" alt="Album Cover 8"></div>
             </div>
             <div class="column light-beige">
-                <div class="grid-item"><img src="image9.jpg" alt="Album Cover 9"></div>
+                <div class="grid-item"><span id="track1"></span></div>
                 <div class="grid-item"><img src="image10.jpg" alt="Album Cover 10"></div>
                 <div class="grid-item"><img src="image11.jpg" alt="Album Cover 11"></div>
-                <div class="grid-item"><img src="image12.jpg" alt="Album Cover 12"></div>
+                <div class="grid-item"><img id="cover_ans" alt="Album Cover Ans"></div>
             </div>
         </div>
     </main>
