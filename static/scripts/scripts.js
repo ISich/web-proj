@@ -172,6 +172,8 @@ document.addEventListener('DOMContentLoaded', function () {
     track3 = tracks[2];
     track4 = tracks[3];
     track_ans = tracks[ans];
+    document.getElementById('result').textContent = "Угадай ответ";
+
     document.getElementById('track1').textContent = getInfo(track1);
     //document.getElementById('track1').textContent = style_data['genre'];
     document.getElementById('track2').textContent = getInfo(track2);
@@ -185,6 +187,19 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("cover2").src = `../static/cover/${track2}.jpg`;
     document.getElementById("cover3").src = `../static/cover/${track3}.jpg`;
     document.getElementById("cover4").src = `../static/cover/${track4}.jpg`;
+
+    document.getElementById("cover1").onerror = function() {
+        this.src = '../static/cover/0.jpg'; // Путь к вашему стандартному изображению
+    };
+    document.getElementById("cover2").onerror = function() {
+        this.src = '../static/cover/0.jpg'; // Путь к вашему стандартному изображению
+    };
+    document.getElementById("cover3").onerror = function() {
+        this.src = '../static/cover/0.jpg'; // Путь к вашему стандартному изображению
+    };
+    document.getElementById("cover4").onerror = function() {
+        this.src = '../static/cover/0.jpg'; // Путь к вашему стандартному изображению
+    };
     //document.getElementById("cover_ans").src = `../static/cover/${track_ans}.jpg`;
 
     //document.getElementById("cover_cur").src = `../static/cover/0.jpg`;
@@ -196,8 +211,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if(!solut && cur != -1){
             //document.getElementById('track_ans').textContent = getInfo(track_ans);
             paintRed();
+            if (cur == track_ans){
+                document.getElementById('result').textContent = "Ты крутой";
+            }
+            else{
+                document.getElementById('result').textContent = "Ты чмо";
+            }
             solut = true;
-            alert(track_ans==cur);
         }
     }
 
