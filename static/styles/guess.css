@@ -70,6 +70,7 @@ main {
 
 .column.light-beige {
     background-color: #f5f5dc;
+    
 }
 
 .grid-item {
@@ -89,6 +90,7 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensures the images cover the grid item without distortion */
+    
 }
 
 .img-button {
@@ -105,8 +107,12 @@ main {
     
 }
 
-.img-button.highlight {
-    background-color: rgba(0, 255, 0, 1); /* Semi-transparent green background */
+.highlight_green {
+    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 1); /* Semi-transparent green background */
+}
+
+.highlight_red {
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1); /* Semi-transparent green background */
 }
 
 .img-button img {

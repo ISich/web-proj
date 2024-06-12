@@ -42,55 +42,6 @@ function getInfo(lineNumber) {
 }
 
 
-function showGameButton() {
-    //НАДО ПОМЕНЯТЬ 2 ЧИСЛО НА КОЛВО ПЕСЕН
-    const tracks = getElements(4, 5);
-    const ans = getRandomInt(4);
-    
-    let colors = ['red-background', 'red-background', 'red-background', 'red-background'];
-    colors[ans] = "green-background";
-    const color1 = colors[0];
-    const color2 = colors[1];
-    const color3 = colors[2];
-    const color4 = colors[3];
-    
-    const info1 = getInfo(Number(track1));
-    const info2 = getInfo(Number(track2));
-    const info3 = getInfo(Number(track3));
-    const info4 = getInfo(Number(track4));
-    
-    document.getElementById('buttonContainer').innerHTML = `
-    <button onclick="toggleMusic('static/music/${track_ans}.mp3')">Play/Pause Track</button>
-    
-    <button class="image-button" onclick="toggleButtonBackground(this,'${color1}')">
-    <img src="static/cover/${track1}.jpg" alt="Cover1" width="100px" height="100px">
-    </button>
-    
-    <button class="image-button" onclick="toggleButtonBackground(this, '${color2}')">
-    <img src="static/cover/${track2}.jpg" alt="Cover2" width="100px" height="100px">
-    </button>
-    
-    <button class="image-button" onclick="toggleButtonBackground(this, '${color3}')">
-    <img src="static/cover/${track3}.jpg" alt="Cover3" width="100px" height="100px">
-    </button>
-    
-    <button class="image-button" onclick="toggleButtonBackground(this, '${color4}')">
-    <img src="static/cover/${track4}.jpg" alt="Cover4" width="100px" height="100px">
-    </button>
-    
-    <button onclick="showMenuButtons()">Go menu</button>
-    
-    `;
-    document.getElementById('textContainer').innerHTML = `
-    <p>${info1}</p>
-    <p>${info2}</p>
-    <p>${info3}</p>
-    <p>${info4}</p>
-    `;
-
-    
-}
-
 function updateCurrent(val){
     if(val == 1){
         cur = track1;
@@ -114,9 +65,73 @@ function updateCurrent(val){
     }
 
 }
-function toggleButtonBackground(button, colorClass) {
-    //alert(colorClass);
-    button.classList.toggle(colorClass, true);
+
+function paintGreen(buttons, button){
+    buttons.forEach(btn => {
+        const parentCell = btn.closest('.grid-item');
+        if (parentCell) {
+            parentCell.classList.remove('highlight_green');
+        }
+    });
+
+    // Добавляем класс 'highlight-cell' к родительскому элементу нажатой кнопки
+    const parentCell = button.closest('.grid-item');
+    if (parentCell) {
+        parentCell.classList.add('highlight_green');
+    }
+}
+
+function paintRed(){
+    if (cur == track1 && track_ans != track1){
+        const parentCell = document.getElementById("cover1").closest('.grid-item');
+        if (parentCell) {
+            parentCell.classList.add('highlight_red');
+        }
+    }
+    if (cur == track2 && track_ans != track2){
+        const parentCell = document.getElementById("cover2").closest('.grid-item');
+        if (parentCell) {
+            parentCell.classList.add('highlight_red');
+        }
+    }
+    if (cur == track3 && track_ans != track3){
+        const parentCell = document.getElementById("cover3").closest('.grid-item');
+        if (parentCell) {
+            parentCell.classList.add('highlight_red');
+        }
+    }
+    if (cur == track4 && track_ans != track4){
+        const parentCell = document.getElementById("cover4").closest('.grid-item');
+        if (parentCell) {
+            parentCell.classList.add('highlight_red');
+        }
+    }
+
+    if (track_ans == track1){
+        const parentCell = document.getElementById("cover1").closest('.grid-item');
+        if (parentCell) {
+            parentCell.classList.add('highlight_green');
+        }
+    }
+    if (track_ans == track2){
+        const parentCell = document.getElementById("cover2").closest('.grid-item');
+        if (parentCell) {
+            parentCell.classList.add('highlight_green');
+        }
+    }
+    if (track_ans == track3){
+        const parentCell = document.getElementById("cover3").closest('.grid-item');
+        if (parentCell) {
+            parentCell.classList.add('highlight_green');
+        }
+    }
+    if (track_ans == track4){
+        const parentCell = document.getElementById("cover4").closest('.grid-item');
+        if (parentCell) {
+            parentCell.classList.add('highlight_green');
+        }
+    }
+
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -132,9 +147,9 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('track2').textContent = getInfo(track2);
     document.getElementById('track3').textContent = getInfo(track3);
     document.getElementById('track4').textContent = getInfo(track4);
-    document.getElementById('track_ans').textContent = getInfo(track_ans);
+    document.getElementById('track_ans').textContent = "?????";
 
-    document.getElementById('track_cur').textContent = "???";
+    document.getElementById('track_cur').textContent = "____";
 
  
     document.getElementById("cover1").src = `../static/cover/${track1}.jpg`;
@@ -157,9 +172,12 @@ document.addEventListener('DOMContentLoaded', function () {
             audioPlayer.play();
         }
     }
-    
+
+
     function checkSolution(){
         if(!solut){
+            document.getElementById('track_ans').textContent = getInfo(track_ans);
+            paintRed();
             solut = true;
             alert(track_ans==cur);
         }
@@ -176,20 +194,9 @@ document.addEventListener('DOMContentLoaded', function () {
             // Получаем значение data-index и выводим его в консоль
             const index = button.getAttribute('data-index');
             
-            if (button.classList.contains('highlight')) {
-                // Если есть, удаляем класс и возвращаемся
-                button.classList.remove('highlight');
-                return;
-            }
             
-            // Убираем класс 'highlight' с всех кнопок
-            buttons.forEach(btn => btn.classList.remove('highlight'));
-            
-            alert(button.classList);
-            // Добавляем класс 'highlight' к нажатой кнопке
-            button.classList.add('highlight');
-
             if(!solut){
+                paintGreen(buttons, button);
                 updateCurrent(index);
             }
         });
