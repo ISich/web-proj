@@ -10,7 +10,10 @@
 </head>
 <body>
     <header>
-        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+        <!-- Оборачиваем логотип в ссылку -->
+        <a href="{{ url_for('main') }}">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+        </a>
     </header>
     <h1 id="style-title">{{ style_data['genre'] }}</h1>
     <main>
