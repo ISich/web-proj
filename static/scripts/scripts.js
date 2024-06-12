@@ -1,8 +1,9 @@
-const fileContent = `1 ||| Lida ||| Ира
-2 ||| YUNGBLUD ||| Abyss
-3 ||| Toto ||| Africa
-4 ||| Kai Angel ||| SLAYERR
-5 ||| Слава КПСС ||| Остров`;
+const fileContent = `
+1 Lida Ира internet-heroes
+2 YUNGBLUD Abyss internet-heroes
+3 Toto Africa internet-heroes
+4 Kai Angel SLAYERR internet-heroes
+5 Слава КПСС,Эщкере Остров internet-heroes`;
 
 let track1 = '1';
 let track2 = '1';
@@ -20,7 +21,7 @@ function getRandomInt(max) {
 function getElements(point, count){
     var res = [];
     while (res.length != point){
-        var val = res.length + 1;
+        var val = getRandomInt(count) + 1;
         if (!(res.includes(val))){
             res.push(val);
         }
@@ -33,7 +34,7 @@ function getInfo(lineNumber) {
     if (lines.length < lineNumber)
         return "Без названия - неизвестен";
     for (const line0 of lines){
-        let line = line0.split('|||');
+        let line = line0.split(' ');
         if (Number(line[0]) == lineNumber){
             return `${line[1]} - ${line[2]}`
         }
@@ -129,18 +130,22 @@ function paintRed(){
 document.addEventListener('DOMContentLoaded', function () {
     const tracks = getElements(4, 5);
     const ans = getRandomInt(4);
+    const genre = document.getElementById('style-title').innerText;
     track1 = tracks[0];
     track2 = tracks[1];
     track3 = tracks[2];
     track4 = tracks[3];
     track_ans = tracks[ans];
 
+    console.log(track1);
+    console.log(track2);
+    console.log(track3);
     document.getElementById('track1').textContent = getInfo(track1);
+    //document.getElementById('track1').textContent = style_data['genre'];
     document.getElementById('track2').textContent = getInfo(track2);
     document.getElementById('track3').textContent = getInfo(track3);
     document.getElementById('track4').textContent = getInfo(track4);
     //document.getElementById('track_ans').textContent = "?????";
-
     //document.getElementById('track_cur').textContent = "____";
 
  
