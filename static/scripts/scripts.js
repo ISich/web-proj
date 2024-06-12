@@ -45,23 +45,15 @@ function getInfo(lineNumber) {
 function updateCurrent(val){
     if(val == 1){
         cur = track1;
-        document.getElementById("cover_cur").src = `../static/cover/${track1}.jpg`;
-        document.getElementById('track_cur').textContent = getInfo(track1);
     }
     else if(val == 2){
         cur = track2;
-        document.getElementById("cover_cur").src = `../static/cover/${track2}.jpg`;
-        document.getElementById('track_cur').textContent = getInfo(track2);
     }
     else if(val == 3){
         cur = track3;
-        document.getElementById("cover_cur").src = `../static/cover/${track3}.jpg`;
-        document.getElementById('track_cur').textContent = getInfo(track3);
     }
     else if(val == 4){
         cur = track4;
-        document.getElementById("cover_cur").src = `../static/cover/${track4}.jpg`;
-        document.getElementById('track_cur').textContent = getInfo(track4);
     }
 
 }
@@ -147,18 +139,18 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('track2').textContent = getInfo(track2);
     document.getElementById('track3').textContent = getInfo(track3);
     document.getElementById('track4').textContent = getInfo(track4);
-    document.getElementById('track_ans').textContent = "?????";
+    //document.getElementById('track_ans').textContent = "?????";
 
-    document.getElementById('track_cur').textContent = "____";
+    //document.getElementById('track_cur').textContent = "____";
 
  
     document.getElementById("cover1").src = `../static/cover/${track1}.jpg`;
     document.getElementById("cover2").src = `../static/cover/${track2}.jpg`;
     document.getElementById("cover3").src = `../static/cover/${track3}.jpg`;
     document.getElementById("cover4").src = `../static/cover/${track4}.jpg`;
-    document.getElementById("cover_ans").src = `../static/cover/${track_ans}.jpg`;
+    //document.getElementById("cover_ans").src = `../static/cover/${track_ans}.jpg`;
 
-    document.getElementById("cover_cur").src = `../static/cover/0.jpg`;
+    //document.getElementById("cover_cur").src = `../static/cover/0.jpg`;
 
     const audioPlayer = document.getElementById('audioPlayer');
     audioPlayer.src = `../static/music/${track_ans}.mp3`;
@@ -176,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function checkSolution(){
         if(!solut){
-            document.getElementById('track_ans').textContent = getInfo(track_ans);
+            //document.getElementById('track_ans').textContent = getInfo(track_ans);
             paintRed();
             solut = true;
             alert(track_ans==cur);
