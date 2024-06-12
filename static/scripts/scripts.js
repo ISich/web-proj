@@ -1,5 +1,4 @@
-const fileContent = `
-1 | Lida | Ира | Интернет Герои
+const fileContent = `1 | Lida | Ира | Интернет Герои
 2 | YUNGBLUD | Abyss | Интернет Герои
 3 | Lizer, Flash | False Mirror | Интернет Герои
 4 | Kai Angel | SLAYERR | Интернет Герои
@@ -23,17 +22,25 @@ const fileContent = `
 22 | Toto | Africa | Рок
 23 | Beatles | Help | Рок
 24 | Deftones | Be Quiet | Рок
-25 | Король и шут | Камнем по голове | Рок
+25 | Король и шут | Камнем по голове | Рок,Поп Музыка
 26 | Pink floyd | Another brick in wall | Рок
 27 | Nirvana | Come as you are | Рок
-28 | Ozzy Osbourne | Crazy train| Рок
+28 | Ozzy Osbourne | Crazy train | Рок
 29 | Animals | Dondt let ma be understood | Рок
-30 |  ssshhhiiittt!!! | Надежда | Рок
-31 | Серега Пират, qeqoqeq | Зомби апокалипсис | Интернет Герои
-32 | Серега Пират | АМ ФП | Интернет Герои
-33 | CMH, mzlf | бейслайн бизнес | Интернет Герои
-34 | DK, CMH | Мемы | Интернет Герои
-35 | Ну вы поняли | Поняли | Интернет Герои`;
+30 | ssshhhiiittt!!! | Надежда | Рок
+31 | Серега Пират, qeqoqeq | Зомби апокалипсис | Интернет Герои,Русский Рэп
+32 | Серега Пират | АМ ФП | Интернет Герои,Русский Рэп
+33 | CMH, mzlf | бейслайн бизнес | Интернет Герои,Русский Рэп
+34 | DK, CMH | Мемы | Интернет Герои,Русский Рэп
+35 | Ну вы поняли | Поняли | Интернет Герои
+36 | Трофим | Город Сочи | Поп Музыка
+37 | Руки вверх | Он тебя целует | Поп Музыка
+38 | Anna Asti | Царица | Поп Музыка
+39 | Комбинация | Не забывай | Поп Музыка
+40 | Мираж | Музыка нас связала | Поп Музыка
+41 | Игорь Корнелюк | Город которого нет | Поп Музыка
+42 | Пошлая Молли | Супермаркет | Поп Музыка
+43 | Дискатека авария | Пей пиво | Поп Музыка`;
 
 
 let track1 = '1';
@@ -64,7 +71,7 @@ function getElements(point){
     var lines = fileContent.split('\n');
     for (const line0 of lines){
         let line = line0.split(' | ');
-        if (line[3] == genre){
+        if (line[3].split(',').includes(genre)){
             possible.push(line)
         }
     }
