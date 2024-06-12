@@ -45,9 +45,16 @@ main {
     gap: 10px;
 }
 
+.columnsss {
+    display: flex; /* Это создает горизонтальное расположение для дочерних элементов */
+}
+#playMusic {
+    margin-left: 10%;
+    margin-right: 10%; /* Добавляет отступ в 20 пикселей справа от кнопки */
+}
 .columns {
     display: flex;
-    gap: 10px; /* Reduced gap between columns */
+    gap: 3%; /* Reduced gap between columns */
     width: 100%;
     max-width: 1000px; /* Adjust the max-width as necessary */
     justify-content: center;

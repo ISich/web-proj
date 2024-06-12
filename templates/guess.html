@@ -18,8 +18,11 @@
     <h1 id="style-title">{{ style_data['genre'] }}</h1>
     <main>
         <h1><span id="result"></span></h1>
-        <button id="playMusic">Воспроизвести/Остановить</button>
-        <button id="solution">Сдать</button>
+        <div class="columnsss">
+            <button id="restart"><img src="../static/images/update.png" width="100px"></button>
+            <button id="playMusic"><img src="../static/images/play.jpg" width="100px"></button>
+            <button id="solution"><img src="../static/images/solution.jpg" width="100px"></button>
+        </div>
 
         <div class="columns">
             <div class="column light-green">
@@ -50,8 +53,6 @@
                 <div class="grid-item-track-name"><span id="track4"></div>
             </div>
         </div>
-            
-        <button id="restart">New game</button>
     </main>
 </body>
 </html>
