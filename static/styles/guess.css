@@ -101,6 +101,12 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.3s ease;
+    
+}
+
+.img-button.highlight {
+    background-color: rgba(0, 255, 0, 1); /* Semi-transparent green background */
 }
 
 .img-button img {
@@ -108,8 +114,9 @@ main {
     height: 100%;
     object-fit: cover; /* Ensures the images cover the grid item without distortion */
     object-position: center; /* Centers the image */
-    display: block;
+    display: block;   
 }
+
 
 .footer {
     text-align: center;

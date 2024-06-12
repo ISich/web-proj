@@ -10,6 +10,7 @@ let track3 = '1';
 let track4 = '1';
 let track_ans = '1';
 let cur = -1;
+let solut = false;
 
 
 function getRandomInt(max) {
@@ -158,7 +159,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
     function checkSolution(){
-        console.log(track_ans==cur);
+        if(!solut){
+            solut = true;
+            alert(track_ans==cur);
+        }
     }
 
     document.getElementById('playMusic').addEventListener('click', playMusic);
@@ -171,7 +175,23 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function () {
             // Получаем значение data-index и выводим его в консоль
             const index = button.getAttribute('data-index');
-            updateCurrent(index);
+            
+            if (button.classList.contains('highlight')) {
+                // Если есть, удаляем класс и возвращаемся
+                button.classList.remove('highlight');
+                return;
+            }
+            
+            // Убираем класс 'highlight' с всех кнопок
+            buttons.forEach(btn => btn.classList.remove('highlight'));
+            
+            alert(button.classList);
+            // Добавляем класс 'highlight' к нажатой кнопке
+            button.classList.add('highlight');
+
+            if(!solut){
+                updateCurrent(index);
+            }
         });
     });
 });

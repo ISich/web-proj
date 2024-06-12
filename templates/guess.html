@@ -16,9 +16,10 @@
     <main>
         <button id="playMusic">Воспроизвести/Остановить</button>
         <button id="solution">Сдать</button>
+        <div class="grid-item">
+            <button class="img-button" data-index="1"><img id="cover1" alt="Album Cover 1"></button>
+        </div>
         
-        <p>Первое случайное число: </p>
-
         <div class="columns">
             <div class="column light-green">
                 <div class="grid-item"><img src="{{ url_for('static', filename='cover/1.jpg') }}"></div>
@@ -27,10 +28,14 @@
                 <div class="grid-item"><img src="{{ url_for('static', filename='cover/4.jpg') }}"></div>
             </div>
             <div class="column light-beige">
+                <div class="grid-item"><span id="track1"></div>
+                <div class="grid-item"><span id="track2"></div>
+                <div class="grid-item"><span id="track3"></div>
+                <div class="grid-item"><span id="track4"></div>
+            </div>
+            <div class="column light-beige">
                 
-                <div class="grid-item">
-                    <button class="img-button" data-index="1"><img id="cover1" alt="Album Cover 1"></button>
-                </div>
+                
                 <div class="grid-item">
                     <button class="img-button" data-index="2"><img id="cover2" alt="Album Cover 2"></button>
                 </div>
@@ -40,12 +45,6 @@
                 <div class="grid-item">
                     <button class="img-button" data-index="4"><img id="cover4" alt="Album Cover 4"></button>
                 </div>
-            </div>
-            <div class="column light-beige">
-                <div class="grid-item"><span id="track1"></div>
-                <div class="grid-item"><span id="track2"></div>
-                <div class="grid-item"><span id="track3"></div>
-                <div class="grid-item"><span id="track4"></div>
             </div>
             
             <div class="column light-beige">
