@@ -20,7 +20,7 @@ function getRandomInt(max) {
 function getElements(point, count){
     var res = [];
     while (res.length != point){
-        var val = (getRandomInt(count) + 1).toString();
+        var val = res.length + 1;
         if (!(res.includes(val))){
             res.push(val);
         }

@@ -16,42 +16,36 @@
     <main>
         <button id="playMusic">Воспроизвести/Остановить</button>
         <button id="solution">Сдать</button>
-        
+
         <div class="columns">
             <div class="column light-green">
-                <div class="grid-item"><img src="{{ url_for('static', filename='cover/1.jpg') }}"></div>
-                <div class="grid-item"><img src="{{ url_for('static', filename='cover/3.jpg') }}"></div>
-                <div class="grid-item"><img src="{{ url_for('static', filename='cover/5.jpg') }}"></div>
-                <div class="grid-item"><img src="{{ url_for('static', filename='cover/4.jpg') }}"></div>
-            </div>
-            <div class="column light-beige">
-                <div class="grid-item"><span id="track1"></div>
-                <div class="grid-item"><span id="track2"></div>
-                <div class="grid-item"><span id="track3"></div>
-                <div class="grid-item"><span id="track4"></div>
-            </div>
-            <div class="column light-beige">
                 <div class="grid-item">
-                    <button class="img-button" data-index="1"><img id="cover1" alt="Album Cover 1"></button>
-                </div>                
-                <div class="grid-item">
-                    <button class="img-button" data-index="2"><img id="cover2" alt="Album Cover 2"></button>
+                    <button class="img-button" data-index="1"><img src="{{ url_for('static', filename='cover/1.jpg') }}" id="cover1" alt="Album Cover 1"></button>
                 </div>
-                <div class="grid-item">
-                    <button class="img-button" data-index="3"><img id="cover3" alt="Album Cover 3"></button>
-                </div>
-                <div class="grid-item">
-                    <button class="img-button" data-index="4"><img id="cover4" alt="Album Cover 4"></button>
-                </div>
+                <div class="grid-item-track-name"><span id="track1"></div>
             </div>
-            
-            <div class="column light-beige">
-                <div class="grid-item"><img id="cover_cur" alt="Album Cover Cur"></div>
-                <div class="grid-item"><span id="track_cur"></span></div>
-                <div class="grid-item"><img id="cover_ans" alt="Album Cover Ans"></div>
-                <div class="grid-item"><span id="track_ans"></div>
+
+            <div class="column light-green">
+                <div class="grid-item">
+                    <button class="img-button" data-index="2"><img src="{{ url_for('static', filename='cover/2.jpg') }}" id="cover2" alt="Album Cover 2"></button>
+                </div>
+                <div class="grid-item-track-name"><span id="track2"></div>
             </div>
-        </div>
+
+            <div class="column light-green">
+                <div class="grid-item">
+                    <button class="img-button" data-index="3"><img src="{{ url_for('static', filename='cover/3.jpg') }}" id="cover3" alt="Album Cover 3"></button>
+                </div>
+                <div class="grid-item-track-name"><span id="track3"></div>
+            </div>
+
+            <div class="column light-green">
+                <div class="grid-item">
+                    <button class="img-button" data-index="4"><img src="{{ url_for('static', filename='cover/4.jpg') }}" id="cover4" alt="Album Cover 4"></button>
+                </div>
+                <div class="grid-item-track-name"><span id="track4"></div>
+            </div>
+
     </main>
 </body>
 </html>
