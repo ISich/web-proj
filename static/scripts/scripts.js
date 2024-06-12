@@ -2,8 +2,8 @@ const fileContent = `
 1 Lida Ира ИнтернетГерои
 2 YUNGBLUD Abyss ИнтернетГерои
 3 Toto Africa ИнтернетГерои
-4 KaiAngel SLAYERR ИнтернетГерои
-5 СлаваКПСС,Эщкере Остров ИнтернетГерои`;
+4 Kai_Angel SLAYERR ИнтернетГерои
+5 Слава_КПСС Остров ИнтернетГерои`;
 
 
 let track1 = '1';
@@ -15,6 +15,14 @@ let cur = -1;
 let solut = false;
 let genre = '';
 
+function playMusic() {
+    if (!audioPlayer.paused) {
+        audioPlayer.pause();
+        audioPlayer.currentTime = 0;
+    } else {
+        audioPlayer.play();
+    }
+}
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -140,7 +148,22 @@ function paintRed(){
 
 }
 
+function update(){
+    track1 = '1';
+    track2 = '1';
+    track3 = '1';
+    track4 = '1';
+    track_ans = '1';
+    cur = -1;
+    solut = false;
+}
+
+function reastartPage(){
+    location.reload();
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+    update();
     genre = document.getElementById('style-title').innerText;
     const tracks = getElements(4);
     const ans = getRandomInt(4);
@@ -169,19 +192,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const audioPlayer = document.getElementById('audioPlayer');
     audioPlayer.src = `../static/music/${track_ans}.mp3`;
 
-    // Функции управления аудиоплеером
-    function playMusic() {
-        if (!audioPlayer.paused) {
-            audioPlayer.pause();
-            audioPlayer.currentTime = 0;
-        } else {
-            audioPlayer.play();
-        }
-    }
-
-
     function checkSolution(){
-        if(!solut){
+        if(!solut && cur != -1){
             //document.getElementById('track_ans').textContent = getInfo(track_ans);
             paintRed();
             solut = true;
@@ -191,6 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('playMusic').addEventListener('click', playMusic);
     document.getElementById('solution').addEventListener('click', checkSolution);
+    document.getElementById('restart').addEventListener('click', reastartPage);
 
     const buttons = document.querySelectorAll('.img-button');
 
@@ -199,7 +212,6 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function () {
             // Получаем значение data-index и выводим его в консоль
             const index = button.getAttribute('data-index');
-            
             
             if(!solut){
                 paintGreen(buttons, button);
