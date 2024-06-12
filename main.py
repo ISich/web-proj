@@ -5,19 +5,19 @@ app = Flask(__name__)
 
 data = {
     "pop": {
-        "genre": "ПопМузыка"
+        "genre": "Поп Музыка"
     },
     "internet-heroes":{
-        "genre": "ИнтернетГерои"
+        "genre": "Интернет Герои"
     },
     "electronic": {
-        "genre": "Электроника"
+        "genre": "Электронщина"
     },
     "rock": {
         "genre": "Рок"
     },
     "rurap": {
-        "genre": "РусскийРэп"
+        "genre": "Русский Рэп"
     }
 }
 

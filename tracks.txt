@@ -1,5 +1,35 @@
-1 Lida Ира ИнтернетГерои
-2 YUNGBLUD Abyss ИнтернетГерои
-3 Toto Africa ИнтернетГерои
-4 Kai_Angel SLAYERR ИнтернетГерои
-5 Слава_КПСС Остров ИнтернетГерои
+1 | Lida | Ира | Интернет Герои
+2 | YUNGBLUD | Abyss | Интернет Герои
+3 | Lizer, Flash | False Mirror | Интернет Герои
+4 | Kai Angel | SLAYERR | Интернет Герои
+5 | Слава КПСС | Остров | Интернет Герои
+6 | Skrillex | Bangarang | Электроника
+7 | Marshmello | Alone | Электроника
+8 | Magnetude | Broken | Электроника
+9 | Kanine | Want You | Электронщина
+10 | Apashe | Good News | Электронщина
+11 | Subtronics | Scream Saver | Электронщина
+12 | Apashe | Uebok[VIP] | Электронщина
+13 | Marshmello | House Party | Электронщина
+14 | Kanine | Higher | Электронщина
+15 | REAPER | Runaway | Электронщина
+16 | Subtronics | Griztronics II | Электронщина
+17 | Ray Volpe | Laserbeam | Электронщина
+18 | Subtronics | Gassed Up VIP | Электронщина
+19 | Агата кристи | Черная луна | Рок
+20 | Любэ | Возле твоей любви | Рок
+21 | Гражданская оборона | Нечего терять | Рок
+22 | Toto | Africa | Рок
+23 | Beatles | Help | Рок
+24 | Deftones | Be Quiet | Рок
+25 | Король и шут | Камнем по голове | Рок
+26 | Pink floyd | Another brick in wall | Рок
+27 | Nirvana | Come as you are | Рок
+28 | Ozzy Osbourne | Crazy train| Рок
+29 | Animals | Dondt let ma be understood | Рок
+30 |  ssshhhiiittt!!! | Надежда | Рок
+31 | Серега Пират, qeqoqeq | Зомби апокалипсис | Интернет Герои
+32 | Серега Пират | АМ ФП | Интернет Герои
+33 | CMH, mzlf | бейслайн бизнес | Интернет Герои
+34 | DK, CMH | Мемы | Интернет Герои
+35 | Ну вы поняли | Поняли | Интернет Герои
