@@ -6,7 +6,6 @@
     <title>MelodyGuess</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
-    
 </head>
 <body>
     <div class="container">
@@ -16,11 +15,22 @@
         <main>
             <p class="welcome-message">Добро пожаловать в MelodyGuess! Выберите категорию треков, которые хотите отгадывать.</p>
             <div class="game-options">
-                <a href="#" class="game-option" style="background-image: url('{{ url_for('static', filename='images/pop.jpg') }}');">Поп музыка<br><span>Эти треки знает каждый</span></a>
-                <a href="#" class="game-option spec" style="background-image: url('{{ url_for('static', filename='images/rap.jpg') }}');">Русский рэп<br><span>Легендарные треки всеми любимого жанра</span></a>
-                <a href="#" class="game-option special-background" style="background-image: url('{{ url_for('static', filename='images/rock.jpg') }}');">Рок<br><span>То что передается поколениями</span></a>
-                <a href="#" class="game-option" style="background-image: url('{{ url_for('static', filename='images/electro.jpg') }}');">Электроника<br><span>От дабстэпа до драм эн бэйса</span></a>
-                <a href="#" class="game-option" style="background-image: url('{{ url_for('static', filename='images/internet.jpg') }}');">Интернет герои<br><span>Треки популярных блогеров/стримеров</span></a>
+                <!-- Ссылки на различные стили -->
+                <a href="{{ url_for('guess', style='pop') }}" class="game-option" style="background-image: url('{{ url_for('static', filename='images/pop.jpg') }}');">
+                    Поп музыка<br><span>Эти треки знает каждый</span>
+                </a>
+                <a href="{{ url_for('guess', style='rurap') }}" class="game-option spec" style="background-image: url('{{ url_for('static', filename='images/rap.jpg') }}');">
+                    Русский рэп<br><span>Легендарные треки всеми любимого жанра</span>
+                </a>
+                <a href="{{ url_for('guess', style='rock') }}" class="game-option special-background" style="background-image: url('{{ url_for('static', filename='images/rock.jpg') }}');">
+                    Рок<br><span>То что передается поколениями</span>
+                </a>
+                <a href="{{ url_for('guess', style='electronic') }}" class="game-option" style="background-image: url('{{ url_for('static', filename='images/electro.jpg') }}');">
+                    Электроника<br><span>От дабстэпа до драм эн бэйса</span>
+                </a>
+                <a href="{{ url_for('guess', style='internet-heroes') }}" class="game-option" style="background-image: url('{{ url_for('static', filename='images/internet.jpg') }}');">
+                    Интернет герои<br><span>Треки популярных блогеров/стримеров</span>
+                </a>
             </div>
         </main>
     </div>
