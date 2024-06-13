@@ -78,7 +78,7 @@ main {
 
 .column.light-beige {
     background-color: #f5f5dc;
-    
+
 }
 
 .grid-item {
@@ -95,23 +95,28 @@ main {
 }
 
 .grid-item-track-name {
-    width: 200px;
+    width: 150px;
     height: 50px;
-    background-color: #c0d6b7;
-    border: 1px solid #c0d6b7;
+    background-color: #9DBBAE; /* Более насыщенный зеленый цвет */
+    border: 2px solid #6C9475; /* Более темный оттенок для границы */
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    overflow: hidden; /* Ensures the images fit within the rounded corners */
+    padding: 10px; /* Добавить внутренние отступы */
+    text-align: center; /* Центрирование текста */
+    color: #fff; /* Белый цвет текста для лучшей видимости */
+    font-size: 18px; /* Увеличенный размер шрифта */
+    font-weight: bold; /* Жирный текст */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Легкая тень для улучшенной видимости */
+    margin-top: 10px; /* Добавить отступ сверху */
 }
 
 .grid-item img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensures the images cover the grid item without distortion */
-    
+
 }
 
 .img-button {
@@ -125,7 +130,7 @@ main {
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s ease;
-    
+
 }
 
 .highlight_green {
@@ -141,9 +146,8 @@ main {
     height: 100%;
     object-fit: cover; /* Ensures the images cover the grid item without distortion */
     object-position: center; /* Centers the image */
-    display: block;   
+    display: block;
 }
-
 
 .footer {
     text-align: center;
@@ -157,7 +161,6 @@ main {
     height: auto; /* Высота будет автоматически рассчитана пропорционально */
     margin-bottom: 5px; /* Уменьшение отступа снизу у логотипа */
 }
-
 
 #style-title {
     font-size: 36px; /* Увеличиваем размер шрифта */
