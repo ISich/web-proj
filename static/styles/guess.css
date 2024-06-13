@@ -5,7 +5,7 @@
     }
 
     .column {
-        max-width: 100%;  /* Колонки*/
+        max-width: 100%;
     }
 }
 
@@ -58,30 +58,30 @@ main {
 }
 
 .columnsss {
-    display: flex; /* Это создает горизонтальное расположение для дочерних элементов */
+    display: flex; 
 }
 #playMusic {
     margin-left: 10%;
-    margin-right: 10%; /* Добавляет отступ в 20 пикселей справа от кнопки */
+    margin-right: 10%;
 }
 .columns {
     display: flex;
-    gap: 3%; /* Reduced gap between columns */
+    gap: 3%; 
     width: 100%;
-    max-width: 1000px; /* Adjust the max-width as necessary */
+    max-width: 1000px;
     justify-content: center;
 }
 
 .column {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centering items in column */
-    gap: 20px; /* Vertical gap between items in each column */
+    align-items: center; 
+    gap: 20px; 
     padding: 10px;
     border-radius: 10px;
-    background-color: #f8f8f8; /* Default background color */
+    background-color: #f8f8f8;
     flex: 1;
-    max-width: 200px; /* Ensure the columns are not too wide */
+    max-width: 200px;
 }
 
 .column.light-green {
@@ -103,31 +103,31 @@ main {
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden; /* Ensures the images fit within the rounded corners */
+    overflow: hidden;
 }
 
 .grid-item-track-name {
     width: 150px;
     height: 50px;
-    background-color: #9DBBAE; /* Более насыщенный зеленый цвет */
-    border: 2px solid #6C9475; /* Более темный оттенок для границы */
+    background-color: #9DBBAE;
+    border: 2px solid #6C9475;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px; /* Добавить внутренние отступы */
-    text-align: center; /* Центрирование текста */
-    color: #fff; /* Белый цвет текста для лучшей видимости */
-    font-size: 18px; /* Увеличенный размер шрифта */
-    font-weight: bold; /* Жирный текст */
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Легкая тень для улучшенной видимости */
-    margin-top: 10px; /* Добавить отступ сверху */
+    padding: 10px; 
+    text-align: center; 
+    color: #fff; 
+    font-size: 18px;
+    font-weight: bold; 
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); 
+    margin-top: 10px;
 }
 
 .grid-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the images cover the grid item without distortion */
+    object-fit: cover;
 
 }
 
@@ -146,18 +146,18 @@ main {
 }
 
 .highlight_green {
-    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 1); /* Semi-transparent green background */
+    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 1); 
 }
 
 .highlight_red {
-    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1); /* Semi-transparent green background */
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 1);
 }
 
 .img-button img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the images cover the grid item without distortion */
-    object-position: center; /* Centers the image */
+    object-fit: cover;
+    object-position: center;
     display: block;
 }
 
@@ -169,22 +169,22 @@ main {
 }
 
 .logo {
-    width: 300px; /* Увеличьте ширину до 300 пикселей или более */
-    height: auto; /* Высота будет автоматически рассчитана пропорционально */
-    margin-bottom: 5px; /* Уменьшение отступа снизу у логотипа */
+    width: 300px;
+    height: auto;
+    margin-bottom: 5px;
 }
 
 #style-title {
-    font-size: 36px; /* Увеличиваем размер шрифта */
-    font-weight: bold; /* Жирный текст */
-    color: #333; /* Темно-серый цвет текста */
-    text-align: center; /* Центрирование текста */
-    margin: 20px 0; /* Отступы сверху и снизу */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень для улучшения видимости */
-    padding: 10px; /* Отступы внутри заголовка */
-    border-radius: 10px; /* Скругленные углы */
-    width: 80%; /* Ограничение ширины */
-    max-width: 800px; /* Максимальная ширина */
-    margin-left: auto; /* Центрирование блока */
-    margin-right: auto; /* Центрирование блока */
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }

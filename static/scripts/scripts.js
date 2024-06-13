@@ -125,7 +125,6 @@ function paintGreen(buttons, button){
         }
     });
 
-    // Добавляем класс 'highlight-cell' к родительскому элементу нажатой кнопки
     const parentCell = button.closest('.grid-item');
     if (parentCell) {
         parentCell.classList.add('highlight_green');
@@ -212,7 +211,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('result').textContent = "Угадай ответ";
 
     document.getElementById('track1').textContent = getInfo(track1);
-    //document.getElementById('track1').textContent = style_data['genre'];
     document.getElementById('track2').textContent = getInfo(track2);
     document.getElementById('track3').textContent = getInfo(track3);
     document.getElementById('track4').textContent = getInfo(track4);
@@ -226,19 +224,18 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("cover4").src = `../static/cover/${track4}.jpg`;
 
     document.getElementById("cover1").onerror = function() {
-        this.src = '../static/cover/0.jpg'; // Путь к вашему стандартному изображению
+        this.src = '../static/cover/0.jpg';
     };
     document.getElementById("cover2").onerror = function() {
-        this.src = '../static/cover/0.jpg'; // Путь к вашему стандартному изображению
+        this.src = '../static/cover/0.jpg';
     };
     document.getElementById("cover3").onerror = function() {
-        this.src = '../static/cover/0.jpg'; // Путь к вашему стандартному изображению
+        this.src = '../static/cover/0.jpg';
     };
     document.getElementById("cover4").onerror = function() {
-        this.src = '../static/cover/0.jpg'; // Путь к вашему стандартному изображению
+        this.src = '../static/cover/0.jpg';
     };
     //document.getElementById("cover_ans").src = `../static/cover/${track_ans}.jpg`;
-
     //document.getElementById("cover_cur").src = `../static/cover/0.jpg`;
 
     const audioPlayer = document.getElementById('audioPlayer');
@@ -246,7 +243,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function checkSolution(){
         if(!solut && cur != -1){
-            //document.getElementById('track_ans').textContent = getInfo(track_ans);
             paintRed();
             if (cur == track_ans){
                 document.getElementById('result').textContent = "Ты крутой";
@@ -264,10 +260,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const buttons = document.querySelectorAll('.img-button');
 
-    // Пройдемся по каждой кнопке и добавим обработчик событий
     buttons.forEach(button => {
         button.addEventListener('click', function () {
-            // Получаем значение data-index и выводим его в консоль
             const index = button.getAttribute('data-index');
             
             if(!solut){
