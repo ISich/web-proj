@@ -1,3 +1,15 @@
+@media (max-width: 800px) {
+    .columns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        max-width: 100%;  /* Колонки*/
+    }
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;

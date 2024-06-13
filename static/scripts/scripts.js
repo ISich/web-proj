@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('result').textContent = "Ты крутой";
             }
             else{
-                document.getElementById('result').textContent = "Ты чмо";
+                document.getElementById('result').textContent = "Ты проиграл";
             }
             solut = true;
         }
